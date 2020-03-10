@@ -22,10 +22,23 @@ projection_parameters:
    cy: 118.01326
 
 # Extrinsic parameter between IMU and Camera.
-estimate_extrinsic: 2   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
+estimate_extrinsic: 1   # 0  Have an accurate extrinsic parameters. We will trust the following imu^R_cam, imu^T_cam, don't change it.
                         # 1  Have an initial guess about extrinsic parameters. We will optimize around your initial guess.
                         # 2  Don't know anything about extrinsic parameters. You don't need to give R,T. We will try to calibrate it. Do some rotation movement at beginning.                        
 #If you choose 0 or 1, you should write down the following matrix.
+extrinsicRotation: !!opencv-matrix
+   rows: 3
+   cols: 3
+   dt: d
+   data: [-0.0314367, -0.1048035, 0.9939960,
+           -0.9994485, 0.0139412, -0.0301392, 
+           -0.0106988, -0.9943953, -0.1051840]
+#Translation from camera frame to imu frame, imu^T_cam
+extrinsicTranslation: !!opencv-matrix
+   rows: 3
+   cols: 1
+   dt: d
+   data: [-0.1400578,-0.24588266, -0.0530172]
 
 #feature traker paprameters
 max_cnt: 150            # max feature number in feature tracking

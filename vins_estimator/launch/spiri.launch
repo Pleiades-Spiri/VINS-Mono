@@ -1,5 +1,5 @@
 <launch>
-    <arg name="config_path" default = "$(find feature_tracker)/../config/euroc/spiri_config_no_extrinsic.yaml" />
+    <arg name="config_path" default = "$(find feature_tracker)/../config/euroc/spiri_config.yaml" />
 	  <arg name="vins_path" default = "$(find feature_tracker)/../config/../" />
     <!--<remap from="/vins_estimator/camera_pose" to="/mavros/vision_pose/pose"/>-->
 
